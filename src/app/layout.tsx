@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import { Montserrat, Poppins } from 'next/font/google';
 import '../styles/tailwind.css';
+import WhatsAppFAB from './components/WhatsAppFAB';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -47,6 +48,7 @@ export default function RootLayout({
     >
       <body className={poppins.className}>
         {children}
+        <WhatsAppFAB />
 </body>
     </html>
   );
