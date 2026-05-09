@@ -12,6 +12,8 @@ type FormData = {
   message: string;
 };
 
+type Status = 'idle' | 'loading' | 'success' | 'error';
+
 const enquiryTypes = [
   'Institutional Partnership',
   'Policy Collaboration',
@@ -31,7 +33,8 @@ export default function ContactFormSection() {
     enquiryType: '',
     message: '',
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -39,9 +42,38 @@ export default function ContactFormSection() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus('loading');
+    setErrorMsg('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Something went wrong.');
+      }
+
+      setStatus('success');
+      setFormData({
+        fullName: '',
+        organisation: '',
+        email: '',
+        phone: '',
+        subject: '',
+        enquiryType: '',
+        message: '',
+      });
+    } catch (err: unknown) {
+      setStatus('error');
+      setErrorMsg(err instanceof Error ? err.message : 'Failed to send message.');
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -133,7 +165,7 @@ export default function ContactFormSection() {
 
           {/* Right: form */}
           <div className="lg:col-span-8">
-            {submitted ? (
+            {status === 'success' ? (
               <div
                 className="rounded p-12 text-center"
                 style={{ background: '#FFFFFF', border: '1px solid #E5E5E5', boxShadow: '0 2px 12px rgba(26,26,62,0.06)' }}
@@ -156,10 +188,11 @@ export default function ContactFormSection() {
                   className="max-w-md mx-auto leading-relaxed"
                   style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.9375rem', color: '#6B7280' }}
                 >
-                  Thank you for your correspondence. Sona T. Sesay’s office will review your message and respond within 2–3 business days.
+                  Thank you for your correspondence. Sona T. Sesay's office will review your message and respond within 2–3 business days.
+                  An auto-reply has been sent to your email.
                 </p>
                 <button
-                  onClick={() => setSubmitted(false)}
+                  onClick={() => setStatus('idle')}
                   className="mt-8 btn-pill-dark"
                 >
                   Send Another Message
@@ -284,6 +317,23 @@ export default function ContactFormSection() {
                   />
                 </div>
 
+                {/* Error banner */}
+                {status === 'error' && (
+                  <div
+                    className="mb-6 rounded px-4 py-3 flex items-start gap-3"
+                    style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DC2626" strokeWidth="2" className="shrink-0 mt-0.5">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.8125rem', color: '#DC2626', margin: 0 }}>
+                      {errorMsg || 'Something went wrong. Please try again.'}
+                    </p>
+                  </div>
+                )}
+
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
                   <p
                     className="text-xs leading-relaxed max-w-sm"
@@ -293,9 +343,19 @@ export default function ContactFormSection() {
                   </p>
                   <button
                     type="submit"
+                    disabled={status === 'loading'}
                     className="btn-pill-ministerial shrink-0"
+                    style={{ opacity: status === 'loading' ? 0.7 : 1, cursor: status === 'loading' ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}
                   >
-                    Submit Enquiry
+                    {status === 'loading' ? (
+                      <>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                          style={{ animation: 'spin 0.8s linear infinite' }}>
+                          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                        </svg>
+                        Sending…
+                      </>
+                    ) : 'Submit Enquiry'}
                   </button>
                 </div>
               </form>
