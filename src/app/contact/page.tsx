@@ -4,6 +4,10 @@ import Footer from '@/components/Footer';
 import ContactHero from '@/app/contact/components/ContactHero';
 import ContactDetailsSection from '@/app/contact/components/ContactDetailsSection';
 import ContactFormSection from '@/app/contact/components/ContactFormSection';
+import type { Metadata } from "next";
+import { seoData } from "@/lib/seo";
+
+export const metadata: Metadata = seoData.contact;
 
 export default function ContactPage() {
   return (

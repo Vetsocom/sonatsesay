@@ -4,6 +4,56 @@ import { Montserrat, Poppins } from 'next/font/google';
 import '../styles/tailwind.css';
 import WhatsAppFAB from './components/WhatsAppFAB';
 
+export const metadata: Metadata = {
+  metadataBase: new URL("https://sonatesay.vesocom.com"),
+  title: {
+    default: "Sona T. Sesay | Education Leadership in Liberia",
+    template: "%s",
+  },
+  description:
+    "Official portfolio of Sona T. Sesay, a Liberian education leader and public servant committed to educational progress, student development, and national impact.",
+  applicationName: "Sona T. Sesay Portfolio",
+  authors: [{ name: "Solomon P. Billot" }],
+  creator: "Solomon P. Billot",
+  publisher: "Sona T. Sesay",
+  category: "Education",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    title: "Sona T. Sesay | Education Leadership in Liberia",
+    description:
+      "Official portfolio of Sona T. Sesay, a Liberian education leader and public servant committed to educational progress, student development, and national impact.",
+    url: "https://sonatesay.vesocom.com",
+    siteName: "Sona T. Sesay",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/assets/images/sona-national-student-symposium-podium.png",
+        width: 1200,
+        height: 630,
+        alt: "Sona T. Sesay official portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sona T. Sesay | Education Leadership in Liberia",
+    description:
+      "Official portfolio of Sona T. Sesay, a Liberian education leader and public servant committed to educational progress, student development, and national impact.",
+    images: ["/assets/images/sona-national-student-symposium-podium.png"],
+  },
+};
+
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -23,20 +73,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'Sona T. Sesay — Education Leader & Public Servant',
-  description:
-    'Sona T. Sesay is a senior Liberian education leader serving in the Ministry of Education, advancing student development, policy, and national educational progress.',
-  icons: {
-    icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
-  },
-  openGraph: {
-    title: 'Sona T. Sesay — Education Leader',
-    description: 'Senior leadership in Liberia’s Ministry of Education. Advancing educational equity, student wellbeing, and national development.',
-    images: [{ url: '/assets/images/app_logo.png', width: 1200, height: 630 }],
-  },
-};
 
 export default function RootLayout({
   children,
