@@ -25,9 +25,7 @@ export default function HeroSection() {
         {/* Dark overlay - stronger on right side where text is */}
         <div
           className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to right, rgba(0,33,71,0.1) 0%, rgba(0,33,71,0.5) 40%, rgba(0,33,71,0.92) 65%, rgba(0,33,71,0.97) 100%)'
-          }} />
+          />
         
         {/* Bottom fade */}
         <div
@@ -64,10 +62,10 @@ export default function HeroSection() {
       </div>
 
       {/* Content - right aligned like ayachebbi.com */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col min-h-screen py-24 justify-center">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col  min-h-screen py-24 justify-center top-20 md:top-10">
         <div className="flex justify-end mb-auto mt-auto">
-          <div className="w-full lg:w-1/2 xl:w-5/12 text-right lg:text-right">
-            {/* Red divider line */}
+          <div className="w-full lg:w-1/2 xl:w-5/12 text-right lg:text-right md:top-4 top-6  ">
+      
             <div className="flex justify-end mb-6">
               <span className="ministerial-divider" />
             </div>
@@ -97,7 +95,7 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom credential strip - now relative to content flow but pushed to bottom */}
-        <div className="mt-12 lg:mt-16">
+        <div className="mt-12 lg:mt-16 hidden md:block">
           <div className="flex flex-wrap gap-4 items-stretch">
             <div
               className="px-5 py-3 rounded flex flex-col justify-center"
