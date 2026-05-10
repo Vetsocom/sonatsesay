@@ -39,7 +39,7 @@ export default function HeroSection() {
   </div>
 
   {/* Content Container */}
-  <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-center py-30 top-[9rem] md:top-0 md:py-24">
+  <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-center py-30 top-[9.5rem] md:top-0 md:py-24">
     <div className="flex justify-center md:justify-end">
       <div className="w-full md:w-1/2 xl:w-5/12 text-right mt-16 top-19">
         
