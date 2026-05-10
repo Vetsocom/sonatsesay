@@ -39,7 +39,7 @@ export default function HeroSection() {
   </div>
 
   {/* Content Container */}
-  <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-center py-30 top-[9.5rem] md:top-0 md:py-24">
+  <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-center py-30 top-[10rem] md:top-0 md:py-24">
     <div className="flex justify-center md:justify-end">
       <div className="w-full md:w-1/2 xl:w-5/12 text-right mt-16 top-19">
         
@@ -49,7 +49,7 @@ export default function HeroSection() {
 
         {/* Stacked title words - Adjusted scales for mobile */}
         <div className="mb-6">
-          <div className="text-3xl md:text-5xl lg:text-6xl hero-caption-style1 mb-1">Minister</div>
+          <div className="text-3xl md:text-5xl lg:text-6xl text-leading text-white mb-1">Minister</div>
           <div className="text-4xl md:text-6xl lg:text-7xl hero-caption-style2 mb-1">Educator</div>
           <div className="text-3xl md:text-5xl lg:text-6xl hero-caption-style3">Leader</div>
         </div>
