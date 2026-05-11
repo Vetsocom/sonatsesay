@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
+import { blogPosts } from '@/data/blog';
 
 const visionPillars = [
   {
@@ -36,29 +37,7 @@ const partners = [
   { name: 'U.S. Dept. of State', full: 'U.S. Department of State — IVLP' },
 ];
 
-const pressItems = [
-  {
-    date: 'March 2023',
-    title: 'Amujae Leader: Sona T. Sesay Recognised for Public Service Excellence',
-    excerpt: 'The Ellen Johnson Sirleaf Presidential Center for Women & Development names Sona T. Sesay as an Amujae Leader for her outstanding contributions to education in Liberia.',
-    link: '/about',
-    image: '/assets/images/sona-award-portrait-tsue.png',
-  },
-  {
-    date: 'November 2022',
-    title: 'IVLP Awardee Brings Global Best Practices to Liberian Education',
-    excerpt: 'The U.S. Department of State recognises Sona T. Sesay through the International Visitor Leadership Program for her impactful leadership in student personnel services.',
-    link: '/about',
-    image: '/assets/images/sona-award-presentation-ceremony.png',
-  },
-  {
-    date: 'June 2021',
-    title: 'Gratitude Network Fellow Champions Educational Equity in West Africa',
-    excerpt: 'Sona T. Sesay joins the Gratitude Network Fellowship, bringing her commitment to scaling educational impact and youth development across West Africa.',
-    link: '/about',
-    image: '/assets/images/sona-bluecrest-graduation-speech.png',
-  },
-];
+const pressItems = blogPosts.slice(0, 3);
 
 export default function VisionPartnersSection() {
   return (
@@ -105,7 +84,7 @@ export default function VisionPartnersSection() {
                   <div className="press-block-heading">{item?.title}</div>
                   <div className="press-block-content">{item?.excerpt}</div>
                   <div className="press-block-link">
-                    <Link href={item?.link}>Learn More</Link>
+                    <Link href={`/blog/${item.slug}`}>Learn More</Link>
                   </div>
                 </div>
               </div>
