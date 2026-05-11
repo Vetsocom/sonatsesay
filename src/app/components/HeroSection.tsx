@@ -72,7 +72,7 @@ export default function HeroSection() {
     </div>
 
     {/* Bottom credential strip - Visible on mobile but scrollable/stacked */}
-    <div className="mt-10 md:mt-16">
+    <div className="mt-8 md:mt-16">
       <div className="flex flex-col md:flex-row gap-3 md:gap-4 items-stretch">
         <div
           className="px-4 py-2 md:px-5 md:py-3 rounded flex flex-col justify-center"

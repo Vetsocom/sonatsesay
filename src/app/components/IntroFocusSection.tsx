@@ -44,7 +44,7 @@ export default function IntroFocusSection() {
       {/* Partners Marquee Strip */}
       <section className="banner-bottom-area py-10" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5E5E5' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="banner-bottom-heading">Organisations I Partnered With</div>
+          <div className="banner-bottom-heading">Partnered Organisations: </div>
           <div className="overflow-hidden">
             <div
               className="marquee-track flex gap-12 items-center"
