@@ -19,7 +19,7 @@ export default function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center] md:object-center"
+          className="object-cover object-center lg:object-center"
           unoptimized
         />
 
@@ -40,22 +40,22 @@ export default function HeroSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-between min-h-screen pt-36 pb-8 md:pt-24 md:pb-12">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-between min-h-screen pt-28 pb-8 lg:pt-24 lg:pb-12">
         <div className="flex justify-end">
-          <div className="w-full md:w-1/2 xl:w-5/12 text-right mt-[13rem] md:mt-16">
+          <div className="w-full sm:w-[88%] md:w-[78%] lg:w-1/2 xl:w-5/12 text-right mt-[13rem] md:mt-[14rem] lg:mt-16">
             <div className="flex justify-end">
               <span className="ministerial-divider" />
             </div>
 
             {/* Stacked title words */}
             <div className="mb-6">
-              <div className="text-3xl md:text-5xl lg:text-6xl text-leading text-white mb-1">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-leading text-white mb-1">
                 Minister
               </div>
-              <div className="text-4xl md:text-6xl lg:text-7xl hero-caption-style2 mb-1">
+              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl hero-caption-style2 mb-1">
                 Educator
               </div>
-              <div className="text-3xl md:text-5xl lg:text-6xl hero-caption-style3">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl hero-caption-style3">
                 Leader
               </div>
             </div>
@@ -77,8 +77,8 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom credential strip */}
-        <div className="mt-8 md:mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="mt-6 lg:mt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-4">
             <div
               className="w-full min-w-0 px-4 py-3 md:px-5 md:py-4 rounded-lg flex flex-col justify-center break-words"
               style={{
