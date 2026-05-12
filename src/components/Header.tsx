@@ -10,7 +10,6 @@ const navLinks = [
   { label: 'Experience', href: '/#experience' },
   { label: 'Credentials', href: '/#credentials' },
   { label: 'Vision', href: '/#vision' },
-  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Header() {
@@ -65,7 +64,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Primary navigation">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-8" aria-label="Primary navigation">
             {navLinks?.map((link) => (
               <Link
                 key={link?.href}
@@ -78,8 +77,8 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="btn-pill-ministerial text-xs"
-              style={{ padding: '0.6rem 1.5rem', fontSize: '0.75rem' }}
+              className="btn-pill-ministerial"
+              style={{ padding: '0.7rem 1.6rem', fontSize: '0.8125rem' }}
             >
               Get in Touch
             </Link>
@@ -124,7 +123,7 @@ export default function Header() {
           </button>
         </div>
 
-        <nav className="flex flex-col items-start px-8 pt-12 gap-8 flex-1" aria-label="Mobile navigation links">
+        <nav className="flex flex-col items-start px-8 pt-12 pb-12 gap-8 flex-1 overflow-y-auto" aria-label="Mobile navigation links">
           {navLinks?.map((link) => (
             <Link
               key={link?.href}

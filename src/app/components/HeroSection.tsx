@@ -50,7 +50,7 @@ export default function HeroSection() {
             {/* Stacked title words */}
             <div className="mb-6">
               <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-leading text-white mb-1">
-                Minister
+                Enterpreneur
               </div>
               <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl hero-caption-style2 mb-1">
                 Educator
