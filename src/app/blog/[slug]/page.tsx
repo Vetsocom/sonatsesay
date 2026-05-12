@@ -21,20 +21,45 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
+  // Helper to calculate reading time
+  const wordsPerMinute = 200;
+  const words = post.content.trim().split(/\s+/).length;
+  const readingTime = Math.ceil(words / wordsPerMinute);
+
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#FFFFFF] pt-32 pb-24">
+      <main className="min-h-screen bg-[#FBFBFB] pt-24 pb-16">
         <article className="max-w-4xl mx-auto px-6 lg:px-12">
+          {/* Top Navigation */}
+          <nav className="mb-10">
+            <Link 
+              href="/blog" 
+              className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-var(--accent) transition-colors duration-300"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transform group-hover:-translate-x-1 transition-transform">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              Back to Updates
+            </Link>
+          </nav>
+
           {/* Header */}
-          <header className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="ministerial-divider" style={{ width: '40px', marginBottom: 0 }} />
+          <header className="mb-10">
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-var(--accent)/10 rounded-full text-[10px] font-bold text-var(--accent) uppercase tracking-wider">
+                {post.category}
+              </span>
+              <div className="w-1 h-1 rounded-full bg-gray-300" />
               <span
-                className="text-[11px] uppercase tracking-widest font-bold"
-                style={{ fontFamily: 'Poppins, sans-serif', color: 'var(--accent)' }}
+                className="text-[11px] uppercase tracking-widest font-bold text-gray-500"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
               >
                 {post.date}
+              </span>
+              <div className="w-1 h-1 rounded-full bg-gray-300" />
+              <span className="text-[11px] uppercase tracking-widest font-bold text-gray-400">
+                {readingTime} min read
               </span>
             </div>
             <h1
@@ -61,7 +86,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
           {/* Content */}
           <div
-            className="prose prose-lg max-w-none mb-20"
+            className="prose prose-lg max-w-none mb-12"
             style={{
               fontFamily: 'Poppins, sans-serif',
               color: '#4B5563',
@@ -72,8 +97,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
           {/* Gallery */}
           {post.gallery && post.gallery.length > 0 && (
-            <section className="mb-20">
-              <div className="flex items-center gap-3 mb-10">
+            <section className="mb-12">
+              <div className="flex items-center gap-3 mb-6">
                 <span className="ministerial-divider" style={{ width: '40px', marginBottom: 0 }} />
                 <h2
                   style={{

@@ -44,11 +44,11 @@ export default function VisionPartnersSection() {
     <>
       {/* Press Section */}
       <section
-        className="py-24"
+        className="py-16"
         style={{ backgroundColor: '#FFFFFF', borderTop: '1px solid #E5E5E5' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center gap-3 mb-12">
+          <div className="flex items-center gap-3 mb-8">
             <span className="ministerial-divider" style={{ width: '40px', marginBottom: 0 }} />
             <h2
               style={{

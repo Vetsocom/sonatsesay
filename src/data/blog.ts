@@ -2,6 +2,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  category: string;
   excerpt: string;
   content: string;
   image: string;
@@ -13,6 +14,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'amujae-leader-sona-t-sesay',
     title: 'Amujae Leader: Sona T. Sesay Recognised for Public Service Excellence',
     date: 'March 2023',
+    category: 'Leadership',
     excerpt: 'The Ellen Johnson Sirleaf Presidential Center for Women & Development names Sona T. Sesay as an Amujae Leader for her outstanding contributions to education in Liberia.',
     content: `
       <p>The Ellen Johnson Sirleaf Presidential Center for Women and Development (EJS Center) is proud to announce the selection of Sona T. Sesay as an Amujae Leader. This prestigious designation recognises African women demonstrating exceptional leadership potential and a profound commitment to public service.</p>
@@ -30,6 +32,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'ivlp-awardee-global-best-practices',
     title: 'IVLP Awardee Brings Global Best Practices to Liberian Education',
     date: 'November 2022',
+    category: 'Awards',
     excerpt: 'The U.S. Department of State recognises Sona T. Sesay through the International Visitor Leadership Program for her impactful leadership in student personnel services.',
     content: `
       <p>Sona T. Sesay has been honoured by the U.S. Department of State as an International Visitor Leadership Program (IVLP) Impact Awardee. This recognition highlights her outstanding leadership and the positive impact of her work in Liberia's education sector.</p>
@@ -47,6 +50,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'gratitude-network-fellow-educational-equity',
     title: 'Gratitude Network Fellow Champions Educational Equity in West Africa',
     date: 'June 2021',
+    category: 'Education',
     excerpt: 'Sona T. Sesay joins the Gratitude Network Fellowship, bringing her commitment to scaling educational impact and youth development across West Africa.',
     content: `
       <p>Sona T. Sesay has been selected as a Gratitude Network Fellow, a global community of social entrepreneurs dedicated to scaling impact in education and youth development. This fellowship recognises Sona's commitment to fostering educational equity across West Africa.</p>
