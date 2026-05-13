@@ -129,7 +129,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           )}
 
           {/* Back to Blog */}
-          <div className="pt-12 border-t border-gray-200">
+          <div className="pt-6 border-t border-gray-200">
             <Link
               href="/blog"
               className="btn-pill-ministerial inline-flex items-center gap-2"

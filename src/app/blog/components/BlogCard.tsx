@@ -31,7 +31,7 @@ export default function BlogCard({ post, index, featured = false }: BlogCardProp
       className={featured ? "lg:col-span-3" : ""}
     >
       <Link href={`/blog/${post.slug}`} className="group block h-full">
-        <article className={`press-block h-full flex ${featured ? 'flex-col lg:flex-row' : 'flex-col'} bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(26,26,62,0.15)] hover:-translate-y-1 border border-gray-100`}>
+        <article className={`press-block h-full flex ${featured ? 'flex-col lg:flex-row' : 'flex-col'} bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(26,26,62,0.15)] hover:-translate-y-1 border border-gray-200`}>
           {/* Image Container */}
           <div
             className={`overflow-hidden relative ${featured ? 'w-full lg:w-3/5 shrink-0' : 'w-full'}`}
@@ -70,7 +70,7 @@ export default function BlogCard({ post, index, featured = false }: BlogCardProp
           </div>
 
           {/* Content Container */}
-          <div className={`flex-1 ${featured ? 'p-8 lg:p-12' : 'p-6'} flex flex-col justify-center`}>
+          <div className={`flex-1 ${featured ? 'p-10 lg:p-14' : 'px-8 py-7'} flex flex-col justify-center`}>
             <div className="flex items-center justify-between mb-4">
               <span className="press-block-date !mt-0 !mb-0 font-bold">{post.date}</span>
               <div className="flex items-center gap-1.5 text-[10px] text-gray-400 font-bold uppercase tracking-widest">
